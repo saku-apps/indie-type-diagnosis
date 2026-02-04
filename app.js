@@ -87,11 +87,16 @@ class IndieTypeDiagnosis {
             // アニメーション用の遅延
             button.style.opacity = '0';
             button.style.transform = 'translateX(20px)';
-            setTimeout(() => {
-                button.style.transition = 'all 0.3s ease';
-                button.style.opacity = '1';
-                button.style.transform = 'translateX(0)';
-            }, index * 80);
+    setTimeout(() => {
+        button.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        button.style.opacity = '1';
+        button.style.transform = 'translateX(0)';
+        // アニメーション完了後にインラインスタイルを削除してCSSの:hoverを有効化
+        setTimeout(() => {
+            button.style.transform = '';
+            button.style.transition = '';
+        }, 300);
+    }, index * 80);
 
             this.elements.optionsContainer.appendChild(button);
         });
