@@ -400,14 +400,17 @@ body {
     box-shadow: var(--shadow-soft);
 }
 
-.option-btn:hover {
-    background: rgba(168, 85, 247, 0.08);
-    border-color: var(--accent-1);
-    transform: translateX(8px);
-    box-shadow: var(--shadow-medium);
+@media (hover: hover) {
+    .option-btn:hover {
+        background: rgba(168, 85, 247, 0.08);
+        border-color: var(--accent-1);
+        transform: translateX(8px);
+        box-shadow: var(--shadow-medium);
+    }
 }
 
 .option-btn:active {
+    background: rgba(168, 85, 247, 0.12);
     transform: translateX(4px);
 }
 
